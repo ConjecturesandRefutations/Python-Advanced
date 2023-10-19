@@ -74,4 +74,97 @@ file_handle = open(file_name, access_mode)
 #Now that we have a text file to process, we can begin our code!
 
 ##Opening a file
-#Before we can write our programme, we have to create a Python programming file (like this one). I have created a new one in this repository
+#Before we can write our programme, we have to create a Python programming file (like this one).
+
+#Below I am creating the path variable and setting the variable to the days.text path
+
+path = 'C:/Users/user/Desktop/Post-Laptop-Programming/Python/Advanced-Python/days.txt'
+
+#In this example, we only want to read from the file, so we will use the 'r' mode
+
+#We will use the open() function to open the days.txt file and assign it to the file object myFile
+
+myFile = open(path, 'r')
+
+#After we have opened the file, we can then read from it, which we will do next
+
+#To read a file in Python, we must open the file in reading 'r' mode, as we've done above
+#Then, you can call any of the methods that Python provides for reading from a file
+#There are three functions which we can use to read the files in Python:
+
+#1. read()
+#2. readline()
+#3. readlines()
+
+##read() function
+#It reads the given no. of bytes (N) as a string. If no value is given, then it reads the file til the end
+#The following is the syntax of read() function:
+
+file_handle.read(N)
+
+#Since our file has been opened, we can now manipulate it (ie read from it) through the file object we assigned to it
+
+myFile.read()
+
+#Output:
+
+#Monday
+#Tuesday
+#Wednesday
+#Thursday
+#Friday
+#Saturday
+#Sunday
+
+##readline() function
+#Python file method readling() reads one entire line from the file
+#Have a look at the syntax of readline() function:
+
+fileObj.readline()
+
+#Simply put, this operation will read the file line-by-line
+
+##readlines() function
+#readlines() method will return all the lines in a file in the format of a Python list where each element is a line in the file
+#Have a look at the syntax of readlines() function:
+
+fileObj.readlines()
+
+#The function returns a list of all the lines which can then be used for further manipulation or simply printed
+#If we specify the parameter, the lines exceeding the number of bytes from the hint parameter will not be returned by the readlines method
+
+##Writing to a file in Python
+#Python provides the write() method to write a string or sequence of bytes to a file
+#When using this function, any information inside the file will be overwritten
+#To do that, Python provides a built-in method write() which writes any string to an open file
+
+##write() function
+#Let's first use write() for writing to a file in Python. This function puts the given text in a single line
+
+file_object.write("some text")
+
+#Let's consider the same sample text file: read.txt
+
+file_input = open("read.text","w")
+file_input.write("Python is amazing!")
+
+#Output:
+
+Python is amazing!
+
+#In the previous example, file_input is the file object. We have opened the file "read.txt" in the 'w' mode (write)
+#When we open the file in write mode and write to a file, we know that the content gets overwritten
+#Thus, now the read.txt file has the content: `Python is amazing`
+
+#Now, most of the time you will be writing to a file without destroying the existing content
+#To write to a file while preserving the previous content is called appending to a file
+#In the append mode, the file pointer is at the end of the file, thus we can continue writing from teh end of the previous content
+
+#For this example, let's append to the same file that we already created (read.txt).
+
+file_input = open("read.txt",'a')
+file_input.write("Bonjour")
+
+#We can see that 'Bonjour' is added to the end
+#We have opened the file 'read.txt' using append mode
+#This tells Puthon not to overwrite the data but start writing from the last line

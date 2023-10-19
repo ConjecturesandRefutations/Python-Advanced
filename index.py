@@ -167,4 +167,22 @@ file_input.write("Bonjour")
 
 #We can see that 'Bonjour' is added to the end
 #We have opened the file 'read.txt' using append mode
-#This tells Puthon not to overwrite the data but start writing from the last line
+#This tells Python not to overwrite the data but start writing from the last line
+
+##Closing a file
+#It's always the best practice to close a file when your works gets finished
+#Closing a file will free up the resources that were tied with the file. It is done using the close() method available in Python
+#Python has a garbage collector to clean up unreferenced objects but we must not rely on it to clos the file
+
+#The sytax to use the close() method is:
+
+fileObj.close()
+
+#After closing the file we cannot perform any operation on the file
+
+#An example
+#Here we are opening a file for reading and closing it properly at the end:
+
+file_input = open("read.txt",'r')
+print(file_input.read())
+file_input.close()

@@ -15,8 +15,8 @@
 
 ###Files in Python###
 #A filename contains two parts - filename and extension
-#Python provides us with an important feature for rearing data from the file and writing data into a file
-#Even though we have various files formats in our computer, the in-built methods of python can handle two major types of files - 
+#Python provides us with an important feature for reading data from the file and writing data into a file
+#Even though we have various files formats in our computer, the in-built methods of Python can handle two major types of files - 
 #Text files and Binary files
 
 #The text and binary files have .txt and .bin as their extensions respectively
@@ -39,3 +39,39 @@
 
 #Before you can perform any operation on a file in Python, you need to open it first
 #And as the read/write transaction completes, you should close it to free the resources tied with the file
+
+###Different File Handling Operations###
+
+##Opening a file in Python
+#To open a file in Python, we use its built-in open() function
+#This function returns a file object, that would be utilized to call other methods associated with it
+#You can you it to read or modify the file
+
+##The Opening Syntax
+#The following is the syntax for the open() method:
+
+file_handle = open(file_name, access_mode)
+
+#`file_name`: is the name of the file which needs to be opened
+#`access_mode`: specifies the mode in which the file has to be opened, such as read, write and so on. By default,
+#it will be in the read-mode
+
+##The File modes
+#We can specify the mode while opening a file, to specify whether we want to read(r) write(w) or append(a) to the file
+#There are six access modes available in Python to work with a text file
+
+#1. "r" - Read mode is used only to read data from the file. It is also the default mode
+#2. "w" - It will create a new file if it does not exist, otherwise it will overwrite the file and allow you to write to it
+#3. "a" - It will write data to the end of the file. It does not erase the existing data, and the file must exist for this mode
+#4. "r+" - It opens the file to both read and write. The file pointer will be at the beginning of the file
+#5. "w+" - The exact same as "r+" but if the file does not exist, a new one is made. Otherwise, the file is overwritten
+#6. "a+" - Similar to "w+" as it will create a new file if the file does not exist. Otherwise, the file pointer is at the end of the file if it exists
+
+##Creating a text file
+#Before we can begin working in Python, we need to ensure that we have a file to work with
+#We can create a text file, and call it `days.txt`
+#In this file I have listed the days of the week
+#Now that we have a text file to process, we can begin our code!
+
+##Opening a file
+#Before we can write our programme, we have to create a Python programming file (like this one). I have created a new one in this repository

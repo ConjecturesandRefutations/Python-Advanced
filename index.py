@@ -186,3 +186,110 @@ fileObj.close()
 file_input = open("read.txt",'r')
 print(file_input.read())
 file_input.close()
+
+###Python Modules
+#To use the functionality present in any module, you have to import it into your current program (like in ReactJS)
+#You need to use the `import` keyword along with the desired module name
+
+import module_name
+
+#When the interpreter comes across an import statement, it imports the module to your current program
+#You can use the functions insude a module by using a dot(.) operator which allows us to call the function by first 
+#specifying the module name, and then the name of the function
+
+module_name.functionName()
+
+##Random Module
+#Python offers a random module that can generate random numbers
+#The random module is a built-in module to generate the pseudo-random variables
+#It can be used to perform some action randomly such as to get a random number, selecting a random element from a list,
+#shuffle elements randomly, etc
+#The most important method of the random module is the random() method
+#Most of the other functions depend on it. The random() method generates a random float in range (0.0,1.0)
+
+##Seeding Random Numbers
+#The random module takes a number as input and generates a random number for it.
+#This initial value is known as a seed, and the procedure is known as seeding
+#The numbers we generate through pseudo-random number generators are deterministic
+#This means they can be replicated using the same seed
+#Let's understand this through an example:
+
+import random
+print('RandomNumber 1=>',random.random())
+print('RandomNumber 2=>',random.random())
+
+#Notice here that we haven't mentioned the value of the seed. By default, the current system time in milliseconds is used as a seed
+
+#Let's have a look at the output:
+
+Random Number 1=> 0.929588880056842
+Random Number 2=> 0.152223695233975
+
+#Both numbers are different because of the change in time during execution from the first statement to the second statement
+
+##random.randint()
+
+import random
+print(random.randint(3,9))
+
+#Output:
+5
+
+#The random.randint() method takes two arguments describing the range from which the method draws a random integer
+
+##random.randrange(start,stop,step)
+#Syntax: random.range(start,stop,step)
+#The random.randrange() function returns a random integer within the given range, ie start and stop
+#The random.randrange() function takes three parameters as input: start, stop and step. Out of these parameters,
+#the two parameters, start and step and optional
+
+import random
+print(random.randrange(3,9))
+
+#Output:
+4
+
+#In the script above, the random.randrang() method is similar to random.randint() but it also lets us define the third argument, 
+#which is the step point of the defined range
+#If the start parameter is not passed in, it takes the default value 0
+#On the other hand, step parameters are optional. It takes the default value 1
+
+##random.shuffle()
+#This funciton is used to shuffle a given sequence randomly
+#The shuffle function shuffles a list in-place. The most common example is suffling cards
+
+import random 
+list = [10,6,4,11,1]
+random.shuffle(list)
+print("Printing shuffled list", list)
+
+#Output
+Printing shuffled list [4,10,1,11,6]
+
+##random.choices()
+#Do you want to choose single or multiple elements from the list randomly with a different probability?
+#If yes, this method will give you a choice to choose more than one element from the sequence randomly
+#This function basically takes a sequence as a parameter and returns random values from it
+#Let's have a look at the syntax of this function:
+
+random.choices(population, weights=None,*,cum_weights=None,k=1)
+
+#The random.choices() return a k sized list of elements chosen from the population with replacement
+#Weights or cum_weights are used to define the selection probability for each element
+#If a weights sequence is specified, random selections are made according to the relative weights
+#Alternatively, if a cum_weights sequence is given, the random selections are made according to the cumulative weights
+#If neither weights nor cum_weights are specified, selections are made with equal probability
+#You cannot specify both weights and cumulative weights
+
+#Example:
+
+import random
+numberList = [151,251,351,451,551]
+print(random.choices(numberList, weights =(10,20,30,40,50),k=5))
+
+#Output:
+[551,331,551,251,551]
+
+#As you can see in the output, we got 551 three times because we specified the highest weight for it. So it has
+#the highest probablity to be selected
+#We specified k=5 to choose 5 elements. You can specify any number you want

@@ -293,3 +293,82 @@ print(random.choices(numberList, weights =(10,20,30,40,50),k=5))
 #As you can see in the output, we got 551 three times because we specified the highest weight for it. So it has
 #the highest probablity to be selected
 #We specified k=5 to choose 5 elements. You can specify any number you want
+
+##Statistics Modules
+# To use the statistics module, our first step is to import the statistics module provided by Python
+
+import statistics
+
+#In Python, we don't have to manually calculate the mean, median and mode
+#We simply yse the functions provided by the statistics module and are good to go
+#Example:
+
+import statistics
+scores = [6,7,2,6,3,5,5,5,2,5,6,1,2]
+a = statistics. mean(scores)
+print(a)
+b = statistics.median(scores)
+print(b)
+c = statistics.mode(scores)
+print(c)
+
+##Low Median (statistics.median_low())
+#If the actual median is halfway between two items, the low median is the item immediately lower than the actual median
+
+import statistics
+list_1 = [15,30,45,60]
+list_2 = [20,40]
+print("Low median of list_1 is:",statistics.median_low(list_1))
+print("Low median of list_2 is:",statistics.median_low(list_2))
+
+##High Median (statistics.median_high())
+#If the actual median is halfway between two items, the high median is the item immediately higher than the actual median
+
+import statistics
+list_3 = [15,30,45,60]
+list_4 = [20,40]
+print("High median of list_3 is:",statistics.median_high(list_3))
+print("High median of list_4 is:",statistics.median_high(list_4))
+
+##Variance
+#Variance in statistics refers to the average of the squared distances from the mean
+#In other words, how varied in the data? Does it vary a lot, in that we have one grade of say 20, another that's 99,
+#and another that's 50? Are the grades very varied, or are they all fairly close together?
+
+##Implementing the Variance Method (statistics.variance())
+#So let's try the variance function on our current list of grades, and then we will change the grades to get a different result
+#Also, to better understand what the value we calculate is, a variance value of zero means that all of the data values
+#are identical. All non-zero variances are positive
+
+import statistics
+grades = [70,90,50,85,65,83,94]
+grades_mean = statistics.mean(grades)
+print("variance of data is:",statistics.variance(grades,grades_mean))
+
+#Output:
+variance of data is 246.57
+
+#Let's change the grades to all the same value to see what happens then
+grades_2 = [80,80,80,80,80,80,80]
+grades_2_mean = statistics.mean(grades_2)
+print("variance of data is:",statistics.variance(grades_2,grades_2_mean))
+
+#Output:
+variance of data is 0
+
+#Sure enough, that gives us a variance of zero. Since all of the grades are the same, they do not vary at all
+
+##Standard Deviation (statistics.stdev.())
+#Standard deviation is used to show how much variation from the mean exists. You can think of it as a typical variation from the mean
+#A low standard deviation indicates that the values tend to be close to the mean of the set, while a high standard deviation indicates
+#indicates that the values are spread out over a wider range
+
+import statistics
+grades = [89,91,95,92,93,94,98,90]
+stdevgrades = statistics.stdev(grades)
+print("The standard deviation of the list is:", stdevgrades)
+
+#Output:
+
+The standard deviation of the list is: 2.91547...
+

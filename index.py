@@ -370,5 +370,8 @@ print("The standard deviation of the list is:", stdevgrades)
 
 #Output:
 
-The standard deviation of the list is: 2.91547...
+The standard deviation of the list is: 2.915474226504
+
+#Fun fact: the standard deviation is actually the square root of the variance
+
 

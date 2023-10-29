@@ -374,4 +374,49 @@ The standard deviation of the list is: 2.915474226504
 
 #Fun fact: the standard deviation is actually the square root of the variance
 
+###Time Module
+#When you work on a real time project, you may need to synchronise your task with system time
+#For example, when it's 9 o'clock, your program should send a message to a group of people
+#For that purpose, you should know how to get system time using Python code
+#To do so, you need to import the Python time module
+#To used the time module in the program, we first have to import it
+#The time module has a number of time-related functions you can implement in your Python programs
+#You can use the time module in all versions of Python
 
+import time
+
+##time() Python function
+#The Python time() function retrieves the current time. The time is represented as the number of seconds since January 1, 1970
+#This is the point at which UNIX time starts, also called the "epoch"
+#The important concept to grasp here is that, when dealing with Python time, you're considering a period of time identified
+#by a starting point
+#In computing, you call this starting point the epoch
+
+##Python time in second
+#Suppose we want to retrieve the time at this moment, We could do so using this program:
+
+import time
+current_time = time.time()
+print(current_time)
+
+#Our code returns:
+ 1698601404.8725767
+
+##What's inside the code?
+#First, time.time() returns the number of seconds that have passed since the epoch 
+#Notice that our program did not return a regular time, such as 8:30pm
+#Our program returned a floating-point number
+
+##Python Get Current Time Using ctime()
+#Sometimes, you may want to see the current time represented as a string
+#To do so, you can pass the number of second from time.time() into time.ctime()
+#Suppose we want to convert our previous epoch floatin-point number into a timestamp. We could do so using this program:
+
+import time 
+current_time = time.time()
+local_time = time.ctime(current_time)
+print ("The local time is:", local_time)
+
+#Output:
+
+The local time is: Sun Oct 29 17:48:01 2023

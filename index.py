@@ -420,3 +420,75 @@ print ("The local time is:", local_time)
 #Output:
 
 The local time is: Sun Oct 29 17:48:01 2023
+
+###Errors and Exceptions
+#A Python program terminates as soon as it encounters an unhandled error
+#So, to establish the difference between errors and exceptions, there are two types of error:
+#Syntax errors (parsing errors)
+#Logical errors (exceptions)
+
+##Syntax Errors
+#Errors caused by not following the proper structure (syntax) of the language are called syntax errors or parsing errors
+#These errors are usually indicated by a little upward arrow in Python, as shown in the code snippet below:
+
+>>> if x < 5
+    File "<input>"
+        if x < 5
+             ^
+SyntaxError: invalid SyntaxError
+
+#Why is there an error?
+#If you forget to add a colon(:) at the end of the if condition, you will get a SyntaxError
+#We notice here that a colon : is missing in the if statement
+#Hence syntax errors are the most basic type of errors that you will encounter and these can be easily fixed by seeing the error
+#message and correcting the code as per python syntax
+
+##Exceptions
+#In most cases, a Python developer writes an impressive piece of code that is ready to execute
+#The program becomes a robust model, but during execution, Python throws up an unexpected error
+#Unfortunately, it is no longer the typical syntax error
+#Developer are now dealing with logical errors, also known as exceptions
+
+#An exception is an error that happens during the excecution of a program
+#Whenever there is an error, Python generates an exception that could be handled. It basically prevents the program from crashing
+#Your code might not have any syntax error, but it can still lead to exceptions when it is executed
+#Logical erros arise due to poor understanding of the problem and its solution
+
+##Example of an Exception Error
+#Dividing a number by xero
+
+a=5
+b=0
+print("Result of Division:", a/b)
+
+#Output:
+
+Traceback (most recent call last):
+File "index.py", line 3, in <module>
+print("Result of Division:", a/b)
+ZeroDivisionError: division by zero
+
+#We got ZeroDivisionError while the syntax of our python code was absolutely correct, because in this case the exception was
+#generating whilst the code still executed
+#Python returns are very detailed exception message for us to understand the origin point and reason for the exception so that 
+#it becomes easier for us to fix the code
+
+##Decoding the Exception Message in Python
+#The term 'Traceback' in the exception message means that Python has traced back the code to the point from where the exception
+#occurred and will be showing the related messages after this lin
+#The second line tells us the name of the Python file and the exact line number for the code due to which exception was generated
+#If that is still not enough for someone, in the third line of the exception message, the complete code statement which leads to the
+#exception is printed
+#And then in the last line, Python tells us which exception/error occurred, which in our example above is ZeroDivisionError
+
+##Common Exceptions in Python
+#ZeroDivisionError: It is raised when you try to divide a number by zero
+#ImportError: it is raised when you try to import the library that is not installed or you have provided the wrong name
+#IndexError: Raised when an index is not found in a sequence. For example, if the length of the list is 10 and you are trying to
+#access the 11th index from that list, then you will get this error
+#IndentationError: Raised when the indentation is not specified properly
+#ValueError: Raised when the built-in function for a data type has the valid type of arguments, but the arguments have invalid
+#values specified
+#Exception: Base class for all exceptions. If you are not sure about which exception may occur, you can use the base class. It will
+#handle them all
+#TypeError: Happens when an incorrect type of function or operation is applied to an object
